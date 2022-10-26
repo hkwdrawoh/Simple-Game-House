@@ -1,7 +1,3 @@
-A game
-
-# Simple Game House Application
-
 Implementation of a simple game house application using Python socket programming.
 
 A game house is an application in which multiple clients connect to a game server, get authorized, and then select a game room to enter and play a game with another player in the same room.
