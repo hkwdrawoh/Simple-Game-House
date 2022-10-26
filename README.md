@@ -4,7 +4,7 @@ A game house is an application in which multiple clients connect to a game serve
 
 This game house application consists of two parts: the server program and the client program.
 
-Refer to `assignment1_handout_COMP3234_ELEC3443.pdf` for detailed game mechanics.
+>   Refer to `assignment1_handout_COMP3234_ELEC3443.pdf` for detailed game mechanics.
 
 
 
@@ -56,7 +56,7 @@ An example of the client terminal of the GameClient.py:
 
 User inputs demonstrated: `user1`, `user11`, `/list`, `/enter 7`, `/true`, `/guess true`, and `/exit`
 
-Refer to `assignment1_handout_COMP3234_ELEC3443.pdf` for detailed usage of user inputs.
+>   Refer to `assignment1_handout_COMP3234_ELEC3443.pdf` for detailed usage of user inputs.
 ## Server Example
 
 An example of the server terminal of the GameServer.py:
