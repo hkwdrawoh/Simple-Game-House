@@ -18,7 +18,7 @@ Then `$ cd` to the folder containing `GameClient.py` and `GameServer.py`.
 
 To start up the server, run the command:
 
-`$ python3 GameServer.py <Server_port> <Path_to_UserInfo.txt>`
+    $ python3 GameServer.py <Server_port> <Path_to_UserInfo.txt>
 
 `<Server_port>` is the server listening port defined by user.
 
@@ -26,7 +26,7 @@ To start up the server, run the command:
 
 ### Client-side Program 
 
-`$ python3 GameClient.py <Server_addr> <Server_port>`
+    $ python3 GameClient.py <Server_addr> <Server_port>
 
 `<Server_addr>` is the IP address of the server.
 
