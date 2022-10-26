@@ -140,6 +140,8 @@ Everytime the client tries to log in, a message will appear indicating the statu
 For every message sent to client, a log message will appear:
 
     Info:  {client_addr} message sent: {send_msg}
+    
+>   `client_addr` is replaced with `username` if the client is logged in.
 
 Any communication errors with the client will disconnect the client, and terminates corresponding thread, but not the server itself:
 
@@ -148,12 +150,15 @@ Any communication errors with the client will disconnect the client, and termina
     Error: (Send msg, {client_addr}) {Error_message}
 
     Warn:  Thread closed due to unexpected disconnection
+    
+>   `client_addr` is replaced with `username` if the client is logged in.
 
 However, if the message is sent successfully but wrong message command, communication will not be terminated. Instead, the server returns `4002 Unrecognized message` to client:
 
     Info:  {client_addr} message sent: 4002 Unrecognized message
 
 >   `client_addr` is replaced with `username` if the client is logged in.
+
 
 ### Game House Thread Lock
 
