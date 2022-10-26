@@ -21,7 +21,6 @@ To start up the server, run the command:
     $ python3 GameServer.py <Server_port> <Path_to_UserInfo.txt>
 
 `<Server_port>` is the server listening port defined by user.
-
 `<Path_to_UserInfo.txt>` is the relative path to `UserInfo.txt`, which stores the user credentials.
 
 ### Client-side Program 
@@ -29,7 +28,6 @@ To start up the server, run the command:
     $ python3 GameClient.py <Server_addr> <Server_port>
 
 `<Server_addr>` is the IP address of the server.
-
 `<Server_port>` is the server listening port defined previously.
 
 
@@ -112,7 +110,6 @@ After initialization, the server will print:
 Server only accepts exactly two arguements in run command, otherwise these messages will appear, and the server shutdowns:
 
 `Error: Wrong usage!`
-
 `Usage: python3 GameServer.py <Server_port> <Path_to_UserInfo.txt>`
 
 If UserInfo.txt is corrupted or not found, this message will appear:
@@ -128,7 +125,6 @@ If server socket is not created properly, this message will appear:
 When a new client connects to the server, a new server thread is created:
 
 `Info:  New client connected. Client: {client_addr}`
-
 `Info:  New thread opened for {client_addr}`
 
 ### Client authentication
@@ -202,7 +198,6 @@ As the result will be sent to the users, no additional message will appear apart
 At the end of the game, the room will be initialized for next round:
 
 `Info:  Room {room_num} waiting for purge"`
-
 `Info:  Room {room_num} purge successfully"`
 
 ### Client request for disconnection
@@ -210,3 +205,7 @@ At the end of the game, the room will be initialized for next round:
 When the client requests for disconnection using `/exit` command, connection is terminated and the thread is closed:
 
 `Info:  {username} disconnected successfully, thread closed`
+
+## Contribution
+
+This appllication is solely created by hkwdrawoh.
