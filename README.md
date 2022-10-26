@@ -209,6 +209,4 @@ At the end of the game, the room will be initialized for next round:
 
 When the client requests for disconnection using `/exit` command, connection is terminated and the thread is closed:
 
-`Info:  {username} disconnected successfully, thread closed`#� �S�i�m�p�l�e�-�G�a�m�e�-�H�o�u�s�e�
-�
-�
+`Info:  {username} disconnected successfully, thread closed`
