@@ -105,55 +105,55 @@ Most actions performed in the server will return a log message to the terminal.
 
 After initialization, the server will print:
 
-`Info:  Game server is up`
+    Info:  Game server is up
 
 Server only accepts exactly two arguements in run command, otherwise these messages will appear, and the server shutdowns:
 
-`Error: Wrong usage!`
-`Usage: python3 GameServer.py <Server_port> <Path_to_UserInfo.txt>`
+    Error: Wrong usage!
+    Usage: python3 GameServer.py <Server_port> <Path_to_UserInfo.txt>
 
 If UserInfo.txt is corrupted or not found, this message will appear:
 
-`Error: (UserInfo.txt) {Error_message}`
+    Error: (UserInfo.txt) {Error_message}
 
 If server socket is not created properly, this message will appear:
 
-`Error: (Server socket) {Error_message}`
+    Error: (Server socket) {Error_message}
 
 ### Client request for connection
 
 When a new client connects to the server, a new server thread is created:
 
-`Info:  New client connected. Client: {client_addr}`
-`Info:  New thread opened for {client_addr}`
+    Info:  New client connected. Client: {client_addr}
+    Info:  New thread opened for {client_addr}
 
 ### Client authentication
 
 Everytime the client tries to log in, a message will appear indicating the status of login:
 
-`Info:  {client_addr} login successful as {username}`
+    Info:  {client_addr} login successful as {username}
 
-`Info:  {client_addr} login failed`
+    Info:  {client_addr} login failed
 
 ### Communication with client
 
 For every message sent to client, a log message will appear:
 
-`Info:  {client_addr} message sent: {send_msg}`
+    Info:  {client_addr} message sent: {send_msg}
 
 Any communication errors with the client will disconnect the client, and terminates corresponding thread, but not the server itself:
 
-`Error: (Recv msg, {client_addr}) {Error_message}`
+    Error: (Recv msg, {client_addr}) {Error_message}
 
-`Error: (Send msg, {client_addr}) {Error_message}`
+    Error: (Send msg, {client_addr}) {Error_message}
 
-`Warn:  Thread closed due to unexpected disconnection`
+    Warn:  Thread closed due to unexpected disconnection
 
 However, if the message is sent successfully but wrong message command, communication will not be terminated. Instead, the server returns `4002 Unrecognized message` to client:
 
-`Info:  {client_addr} message sent: 4002 Unrecognized message`
+    Info:  {client_addr} message sent: 4002 Unrecognized message
 
-(`client_addr` is replaced with `username` if the client is logged in.)
+>   `client_addr` is replaced with `username` if the client is logged in.
 
 ### Game House Thread Lock
 
@@ -161,50 +161,50 @@ To avoid thread interferences, thread locks are implemented for data protection.
 
 When a client thread is waiting the lock to be released:
 
-`Info:  {username} awaiting Room {room_num} lock release..."`
+    Info:  {username} awaiting Room {room_num} lock release..."
 
 When a client thread acquire the lock:
 
-`Info:  Room {room_num} locked by {username}`
+    Info:  Room {room_num} locked by {username}
 
 When a room lock is released:
 
-`Info:  Room {room_num} released`
+    Info:  Room {room_num} released
 
 ### Game Mechanics
 
 The game starts when two players enter the same game room. A message will appear when first player enters the room and waiting for second player:
 
-`Info:  {username} awaiting Room {room_num} full...`
+    Info:  {username} awaiting Room {room_num} full...
 
 After second player enters, a match found message will appear twice, indicating individual player username:
 
-`Info:  Room {room_num} match found! Player: {username}`
+    Info:  Room {room_num} match found! Player: {username}
 
 Each player will submit a guess, once the server receives, a message will appear:
 
-`Info:  {username} submitted guess {guess} to Room {room_num}`
+    Info:  {username} submitted guess {guess} to Room {room_num}
 
 If the player disconnects during the game, an additional message will appear:
 
-`Info:  Ending game with input -1`
+    Info:  Ending game with input -1
 
 After both guesses are received, a summary will appear:
 
-`Info:  Room {room_num} {username1}: {guess1}, {username2}: {guess2}, Computer: {answer}`
+    Info:  Room {room_num} {username1}: {guess1}, {username2}: {guess2}, Computer: {answer}
 
 As the result will be sent to the users, no additional message will appear apart from `Info: {client_addr} message sent: {send_msg}`
 
 At the end of the game, the room will be initialized for next round:
 
-`Info:  Room {room_num} waiting for purge"`
-`Info:  Room {room_num} purge successfully"`
+    Info:  Room {room_num} waiting for purge"
+    Info:  Room {room_num} purge successfully"
 
 ### Client request for disconnection
 
 When the client requests for disconnection using `/exit` command, connection is terminated and the thread is closed:
 
-`Info:  {username} disconnected successfully, thread closed`
+    Info:  {username} disconnected successfully, thread closed
 
 ## Contribution
 
